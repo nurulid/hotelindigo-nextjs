@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import { useScroll, motion, useTransform } from "motion/react";
 import { SectionDetails } from "../shared/section-details";
 
-export const Accommodation = () => {
+export const Accommodation = ({accommodations, dining}) => {
   const { scrollYProgress } = useScroll();
   const [hoveredImage, setHoveredImage] = useState(null);
 
@@ -17,44 +17,13 @@ export const Accommodation = () => {
     "object-[96%]",
   ];
 
-  const ACCOMODATIONS = [
-    {
-      title: "Rooms",
-      image: "/images/rooms.webp",
-      link: "/rooms",
-    },
-    {
-      title: "Suites",
-      image: "/images/suites.png",
-      link: "/suites",
-    },
-    {
-      title: "One bedroom villa",
-      image: "/images/villa-1.png",
-      link: "/villa-1",
-    },
-    {
-      title: "two bedroom villa",
-      image: "/images/villa-2.png",
-      link: "/villa-2",
-    },
-  ];
-
-  const DINING = {
-    title: "Dining",
-    description:
-      "Our unique food and beverage concept is inspired by the vibrant neighborhood we inhabit—a melting pot of flavors from around the world, while still strongly influenced by local culinary traditions.",
-    image: "/images/dining.png",
-    link: "/dining",
-  };
-
   return (
     <section className="relative container-y-padding">
       <div className="container">
         <h2 className="text-4xl mb-14 uppercase">Accommodation</h2>
         <div className="relative z-[2]">
           <div className="flex md:gap-5 lg:gap-10 hover:gap-[5px] transition-all duration-300 group-container">
-            {ACCOMODATIONS.map((item, index) => (
+            {accommodations.map((item, index) => (
               <Link
                 href={item.link}
                 className="block w-[calc(100%/4)] group"
@@ -93,7 +62,7 @@ export const Accommodation = () => {
         <div className="flex flex-col-reverse sm:grid grid-cols-2 gap-[50px] items-center relative z-[2]">
           <div className="md:h-[300px] lg:h-[400px] xl:h-[500px] w-full overflow-hidden lg:rounded-bl-[150px]">
             <Image
-              src={DINING.image}
+              src={dining.image}
               alt="Accommodation"
               width={400}
               height={400}
@@ -102,9 +71,9 @@ export const Accommodation = () => {
           </div>
 
           <SectionDetails
-            title={DINING.title}
-            description={DINING.description}
-            linkUrl={DINING.link}
+            title={dining.title}
+            description={dining.description}
+            linkUrl={dining.link}
             linkTitle="Explore"
             className="lg:pr-[100px]"
           />

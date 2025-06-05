@@ -8,20 +8,24 @@ import { InstagramWidget } from "@/component/landing/instagram-widget";
 import { Intro } from "@/component/landing/intro";
 import { LookInside } from "@/component/landing/look-inside";
 import { Reviews } from "@/component/landing/reviews";
+import { hotelData } from "@/lib/data";
 
-export default function Home() {
+export default async function Home() {
   return (
     <>
       <HeroVideo />
       <Intro />
-      <Accommodation />
-      <Event />
-      <ExclusiveOffer />
+      <Accommodation
+        accommodations={hotelData.accommodations}
+        dining={hotelData.dining}
+      />
+      <Event events={hotelData.events} facilities={hotelData.facilities} />
+      <ExclusiveOffer exclusiveOffers={hotelData.exclusiveOffers}/>
       <LookInside />
       <InstagramWidget />
-      <Address />
+      <Address contact={hotelData.contact}/>
       <Reviews />
-      <Footer /> {/* todo */}
+      <Footer awards={hotelData.awards}/> {/* todo */}
     </>
   );
 }

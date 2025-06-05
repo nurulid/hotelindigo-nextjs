@@ -2,31 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export const Address = () => {
-  const ADDRESS = {
-    street: "Jl. Camplung Tanduk No. 10",
-    city: "Bali",
-    postalCode: "80361",
-    country: "Indonesia",
-    phone: "+62-361-2099999",
-    email: "hotelindigobali.reservations@ihg.com",
-    notes:
-      "Check-in Time: 3PM | Check-out Time: 12PM *Minimum check-in age is 18 years old",
-    shuttleService: [
-      {
-        title: "Transportation / Airport Transfer Price List",
-        link: "/",
-      },
-      {
-        title: "International Airport Arrival Pick-up Information",
-        link: "/",
-      },
-    ],
-    mapLink: "https://goo.gl/maps/8b1d5Z7f3x2z",
-    mapImage:
-      "https://seminyak.hotelindigo.com/_app/immutable/assets/map.DEkNhJdb.png",
-  };
-
+export const Address = ({contact}) => {
   return (
     <section className="bg-primary text-white py-[50px] sm:py-[100px]">
       <div className="container mx-auto">
@@ -38,14 +14,14 @@ export const Address = () => {
               className="aspect-square w-full object-cover object-center sm:rounded-bl-[150px]"
               width="1280"
               height="1220"
-              src={ADDRESS.mapImage}
+              src={contact.mapImage}
             />
           </div>{" "}
           <div className="sm:w-[50%]">
             <div className="font-light text-center sm:text-left space-y-5">
               <h3 className="uppercase text-white lg:text-[1.6rem] xl:text-[1.8rem] leading-[1.4]">
-                {ADDRESS.street} <br />
-                {ADDRESS.city}, {ADDRESS.postalCode} {ADDRESS.country}
+                {contact.street} <br />
+                {contact.city}, {contact.postalCode} {contact.country}
               </h3>{" "}
               <ul>
                 <li>
@@ -53,7 +29,7 @@ export const Address = () => {
                     href="tel:623612099999"
                     className="text-white text-[.9rem] lg:text-[.8rem] xl:text-[.9rem] underline transition-all duration-300 hover:text-secondary hover:no-underline"
                   >
-                    Tel: {ADDRESS.phone}
+                    Tel: {contact.phone}
                   </Link>
                 </li>{" "}
                 <li>
@@ -61,19 +37,19 @@ export const Address = () => {
                     href="mailto:hotelindigobali.reservations@ihg.com"
                     className="text-white text-[.9rem] lg:text-[.8rem] xl:text-[.9rem] underline transition-all duration-300 hover:text-secondary hover:no-underline"
                   >
-                    Email: {ADDRESS.email}
+                    Email: {contact.email}
                   </Link>
                 </li>
               </ul>{" "}
               <p className="text-white text-[.9rem] lg:text-[.8rem] xl:text-[.9rem] w-[350px] mx-auto sm:mx-0">
-                {ADDRESS.notes}
+                {contact.notes}
               </p>
               <div>
                 <p className="text-white text-[.9rem] lg:text-[1rem] xl:text-[1.2rem]">
                   SHUTTLE SERVICE
                 </p>{" "}
                 <ul className="mt-[20px] mb-[40px]">
-                  {ADDRESS.shuttleService.map((service, index) => (
+                  {contact.shuttleService.map((service, index) => (
                     <li key={index}>
                       <a
                         href={service.link}
@@ -87,7 +63,7 @@ export const Address = () => {
                 </ul>
               </div>
               <Link
-                href={ADDRESS.mapLink}
+                href={contact.mapLink}
                 target="_blank"
                 className="link-btn-secondary mt-[10px]"
               >

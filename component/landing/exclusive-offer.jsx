@@ -6,31 +6,8 @@ import { Carousel } from "../shared/carousel";
 import Link from "next/link";
 import Image from "next/image";
 
-export const ExclusiveOffer = () => {
+export const ExclusiveOffer = ({exclusiveOffers}) => {
   const { scrollYProgress } = useScroll();
-
-  const EXCLUSIVE_OFFER = [
-    {
-      title: "Summer in Bali",
-      description:
-        "Stay a minimum of 3 nights and enjoy complimentary one-way airport pick up and breakfast to fuel your island adventures",
-      image: "/images/offer-1.png",
-      link: "/about",
-    },
-    {
-      title: "Seminyak Bliss",
-      description: "Complimentary daily resort credit starts from IDR 300.000",
-      image: "/images/offer-2.png",
-      link: "/about",
-    },
-    {
-      title: "Best Flexible Rate",
-      description:
-        "Book directly through IHG's website and/or mobile apps to secure the lowest available room rate",
-      image: "/images/offer-3.png",
-      link: "/about",
-    },
-  ];
 
   return (
     <section className="relative container-y-padding">
@@ -38,7 +15,7 @@ export const ExclusiveOffer = () => {
         <div>
           <Carousel
             navigation
-            slides={EXCLUSIVE_OFFER.map((offer, index) => (
+            slides={exclusiveOffers.map((offer, index) => (
               <div className="flex flex-col md:flex-row md:items-center gap-10">
                 <div key={index} className="lg:w-[60%] aspect-[16/10]">
                   <Image

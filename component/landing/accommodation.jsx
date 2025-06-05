@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { useScroll, motion, useTransform } from "motion/react";
+import { SectionDetails } from "../shared/section-details";
 
 export const Accommodation = () => {
   const { scrollYProgress } = useScroll();
@@ -89,7 +90,7 @@ export const Accommodation = () => {
 
         <div className="h-28" />
 
-        <div className="flex flex-col sm:grid grid-cols-2 gap-[50px] items-center relative z-[2]">
+        <div className="flex flex-col-reverse sm:grid grid-cols-2 gap-[50px] items-center relative z-[2]">
           <div className="md:h-[300px] lg:h-[400px] xl:h-[500px] w-full overflow-hidden lg:rounded-bl-[150px]">
             <Image
               src={DINING.image}
@@ -99,13 +100,14 @@ export const Accommodation = () => {
               className="h-full w-full object-cover object-center"
             />
           </div>
-          <div className="space-y-5 pr-[100px]">
-            <h2 className="uppercase text-[2.2rem]">{DINING.title}</h2>
-            <p>{DINING.description}</p>
-            <Link href={DINING.link} className="link-btn">
-              Explore
-            </Link>
-          </div>
+
+          <SectionDetails
+            title={DINING.title}
+            description={DINING.description}
+            linkUrl={DINING.link}
+            linkTitle="Explore"
+            className="lg:pr-[100px]"
+          />
         </div>
         <motion.div
           className="absolute left-0 sm:top-[30%] bottom-0 h-[100px] sm:h-[unset] sm:w-[15vw] hidden sm:block bg-primary z-[1] transition-all duration-100"

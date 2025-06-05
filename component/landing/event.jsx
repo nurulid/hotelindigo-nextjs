@@ -86,7 +86,7 @@ export const Event = () => {
 
       <div className="space-y-10 py-4">
         <h2 className="uppercase text-[2.2rem] container">Facilities</h2>
-        <div className="px-[240px]">
+        <div className="px-4 lg:px-[240px]">
           <Carousel
             navigation
             slides={FACILITIES.map((facility, index) => (
@@ -101,7 +101,7 @@ export const Event = () => {
                   height={400}
                   className="w-full md:h-[400px] lg:h-[460px] xl:h-full 2xl:h-full object-cover transition-all !duration-500 object-center"
                 />
-                <div className="relative sm:absolute bottom-0 left-0 w-full py-[30px] sm:px-[50px] font-light bg-gradient-to-t from-black/80 via-black/35 to-transparent md:h-[90%] lg:h-[50%] sm:flex flex-col justify-end">
+                <div className="relative sm:absolute bottom-0 left-0 w-full py-[30px] sm:px-[50px] font-light bg-gradient-to-t from-black/80 via-black/35 to-transparent md:h-[90%] lg:h-[50%] sm:flex flex-col justify-end bg-primary sm:bg-transparent">
                   <div className="text-white p-4 space-y-6">
                     <div className="space-y-5">
                       <h3 className="text-3xl font-bold text-white">

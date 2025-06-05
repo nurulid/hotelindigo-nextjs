@@ -39,7 +39,7 @@ export const ExclusiveOffer = () => {
           <Carousel
             navigation
             slides={EXCLUSIVE_OFFER.map((offer, index) => (
-              <div className="flex items-center gap-10">
+              <div className="flex flex-col md:flex-row md:items-center gap-10">
                 <div key={index} className="lg:w-[60%] aspect-[16/10]">
                   <Image
                     src={offer.image}
@@ -50,7 +50,7 @@ export const ExclusiveOffer = () => {
                   />
                 </div>
 
-                <div className="lg:w-[40%] p-4 space-y-6">
+                <div className="lg:w-[40%] p-4 space-y-6 bg-white">
                   <div className="space-y-5">
                     <div>
                       <span className="text-secondary uppercase block">

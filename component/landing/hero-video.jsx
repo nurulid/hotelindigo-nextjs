@@ -50,11 +50,11 @@ export const HeroVideo = () => {
         Your browser does not support the video tag.
       </video>
 
-      <div class="absolute bottom-20 left-1/2 -translate-x-1/2 text-center z-20 text-white">
-        <p class="uppercase text-[.9rem] sm:text-[1.5rem] lg:text-[1.8rem] xl:text-[2rem] font-light leading-[100%]">
+      <div className="absolute bottom-20 left-1/2 -translate-x-1/2 text-center z-20 text-white">
+        <p className="uppercase text-[.9rem] sm:text-[1.5rem] lg:text-[1.8rem] xl:text-[2rem] font-light leading-[100%]">
           BOUTIQUE HOTEL STEPS FROM
         </p>{" "}
-        <p class="uppercase text-[1.3rem] sm:text-[1.5rem] lg:text-[2.8rem] xl:text-[3rem] ">
+        <p className="uppercase text-[1.3rem] sm:text-[1.5rem] lg:text-[2.8rem] xl:text-[3rem] ">
           SEMINYAK BEACH FRONT
         </p>
       </div>

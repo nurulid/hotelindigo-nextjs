@@ -1,1 +1,43 @@
 @import "tailwindcss";
+
+@theme {
+  --color-primary: #002d52;
+  --color-text: #333333;
+  --color-secondary: #a26928;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-text;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-light text-primary leading-[1.3em];
+  }
+
+  p {
+    @apply font-light text-[.9rem];
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer components {
+  .container-y-padding {
+    @apply py-[3rem] sm:py-[6rem];
+  }
+
+  .link-btn {
+    @apply bg-primary text-white text-[.7rem] px-[25px] py-[10px] rounded-full uppercase transition duration-300 ease-in-out inline-block mt-[20px] transform hover:bg-secondary hover:shadow-md hover:-translate-y-1;
+  }
+
+  .link-btn-secondary {
+    @apply text-primary text-[.7rem] sm:text-[.7rem] lg:text-[.8rem] xl:text-[.9rem] bg-white border-[1px] border-[#eee] px-[25px] py-[15px] uppercase rounded-full hover:text-secondary hover:border-secondary;
+  }
+}

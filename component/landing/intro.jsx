@@ -26,7 +26,7 @@ export const Intro = () => {
       </motion.h2>
 
       <div className="relative">
-        <div className="w-[340px] md:w-[470px] h-[400px] md:h-[600px] rounded-tl-full">
+        <div className="w-[300px] md:w-[440px] h-[400px] md:h-[600px] rounded-tl-full">
           <Image
             src="/images/slideshow-2.avif"
             width={400}
@@ -37,7 +37,7 @@ export const Intro = () => {
           />
         </div>
         <motion.div
-          className="absolute -z-[1] w-[200px] h-[250px] md:w-[250px] md:h-[300px] lg:w-[300px] lg:h-[400px] bg-primary block -right-10 md:-right-20"
+          className="absolute -z-[1] w-[200px] h-[250px] md:w-[250px] md:h-[300px] lg:w-[300px] lg:h-[400px] bg-primary block -right-5 md:-right-20"
           style={{
             y,
             bottom: 0,

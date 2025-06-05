@@ -20,6 +20,10 @@
   p {
     @apply font-light text-[.9rem];
   }
+
+  button {
+    @apply cursor-pointer;
+  }
 }
 
 @layer utilities {
@@ -31,5 +35,9 @@
 @layer components {
   .container-y-padding {
     @apply py-[3rem] sm:py-[6rem];
+  }
+
+  .mobile-logo {
+    @apply absolute left-[44%] -translate-x-1/2;
   }
 }

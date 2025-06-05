@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { useScroll, motion, useTransform } from "motion/react";
+import { SectionDetails } from "../shared/section-details";
 
 export const Intro = () => {
   const { scrollYProgress } = useScroll();
@@ -45,22 +46,21 @@ export const Intro = () => {
       </div>
 
       <motion.div
-        className="md:pl-0 lg:pl-16 space-y-5 self-start  translate-y-[20%]"
+        className="md:pl-0 lg:pl-24 self-start  translate-y-[15%]"
         style={{
           y,
           bottom: 0,
         }}
       >
-        <h3 className="uppercase text-[2.2rem]">About Us & Our Neighborhood</h3>
-        <p>
-          Hotel Indigo Bali Seminyak Beach is situated in the heart of one of
+        <SectionDetails
+          title="About Us & Our Neighborhood"
+          description="Hotel Indigo Bali Seminyak Beach is situated in the heart of one of
           Bali’s most vibrant districts, a place where centuries of tradition
           and culture blend seamlessly with an atmosphere of casual
-          sophistication.
-        </p>
-        <Link href="/about" className="link-btn">
-          Explore
-        </Link>
+          sophistication."
+          linkUrl="/about"
+          linkTitle="Explore"
+        />
       </motion.div>
     </section>
   );

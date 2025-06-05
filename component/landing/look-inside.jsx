@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { LinkButton } from "../shared/link-button";
 
 export const LookInside = () => {
   return (
@@ -23,9 +24,9 @@ export const LookInside = () => {
           </h2>{" "}
         </div>
 
-        <Link href="/" target="_blank" className="link-btn">
+        <LinkButton href="/" target="_blank">
           View All
-        </Link>
+        </LinkButton>
       </div>
 
       <div className="w-[50%] md:h-[50vh] lg:h-[73vh] overflow-hidden hidden sm:block">

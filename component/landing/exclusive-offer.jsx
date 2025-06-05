@@ -5,6 +5,7 @@ import { useScroll, motion, useTransform } from "motion/react";
 import { Carousel } from "../shared/carousel";
 import Link from "next/link";
 import Image from "next/image";
+import { LinkButton } from "../shared/link-button";
 
 export const ExclusiveOffer = ({exclusiveOffers}) => {
   const { scrollYProgress } = useScroll();
@@ -39,9 +40,9 @@ export const ExclusiveOffer = ({exclusiveOffers}) => {
                     </div>
                     <p>{offer.description}</p>
                   </div>
-                  <Link href="/about" className="link-btn text-[.7rem] sm:text-[.9rem] px-[25px] py-[10px]">
+                  <LinkButton href="/about" size="sm">
                     View all
-                  </Link>
+                  </LinkButton>
                 </div>
               </div>
             ))}

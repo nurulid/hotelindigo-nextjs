@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { LinkButton } from "../shared/link-button";
 
 export const Address = ({contact}) => {
   return (
@@ -51,24 +52,24 @@ export const Address = ({contact}) => {
                 <ul className="mt-[20px] mb-[40px]">
                   {contact.shuttleService.map((service, index) => (
                     <li key={index}>
-                      <a
+                      <Link
                         href={service.link}
                         target="_blank"
                         className="text-white text-[.9rem] lg:text-[.8rem] xl:text-[.9rem] underline transition-all duration-300 hover:text-secondary hover:no-underline"
                       >
                         {service.title}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
               </div>
-              <Link
+              <LinkButton
                 href={contact.mapLink}
                 target="_blank"
-                className="link-btn-secondary mt-[10px]"
+                variant="secondary"
               >
                 RESORT MAP
-              </Link>
+              </LinkButton>
             </div>
           </div>
         </div>

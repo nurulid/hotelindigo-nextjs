@@ -6,6 +6,7 @@ import { useScroll, motion, useTransform } from "motion/react";
 import Link from "next/link";
 import { Carousel } from "../shared/carousel";
 import { SectionDetails } from "../shared/section-details";
+import { LinkButton } from "../shared/link-button";
 
 export const Event = ({facilities, events}) => {
   const { scrollYProgress } = useScroll();
@@ -68,9 +69,9 @@ export const Event = ({facilities, events}) => {
                       </h3>
                       <p>{facility.description}</p>
                     </div>
-                    <Link href="/about" className="link-btn">
+                    <LinkButton href="/about">
                       Explore
-                    </Link>
+                    </LinkButton>
                   </div>
                 </div>
               </div>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { LinkButton } from "../shared/link-button";
 
 export const Reviews = () => {
   return (
@@ -80,13 +81,13 @@ export const Reviews = () => {
             4.8/5(1147 Reviews)
           </p>
         </div>{" "}
-        <a
+        <LinkButton
           href="/"
           target="_blank"
-          className="link-btn lg:text-[.8rem] xl:text-[.9rem] px-[35px] py-[15px]"
+          size="lg"
         >
           Explore
-        </a>
+        </LinkButton>
       </div>
     </section>
   );

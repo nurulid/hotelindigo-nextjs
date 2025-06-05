@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { LinkButton } from "../shared/link-button";
 
 export const InstagramWidget = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -23,7 +24,7 @@ export const InstagramWidget = () => {
     <section className="container container-y-padding">
       <div className="text-center mb-[30px] space-y-4">
         <h2 className="uppercase text-[2.2rem]">HIT US UP ON THE GRAM</h2>
-        <Link href="https://instagram.com" className="link-btn" target="_blank">GO SOCIAL</Link>
+        <LinkButton href="https://instagram.com" target="_blank">GO SOCIAL</LinkButton>
       </div>
       <div>
         {isMounted && (

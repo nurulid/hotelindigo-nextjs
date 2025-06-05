@@ -10,8 +10,8 @@ export const Footer = ({awards}) => {
       <section className="container-y-padding bg-primary text-white">
         <div className="container space-y-10">
           <Awards awards={awards}/>
-          <Subscriptionform />
-          <Navigation />
+          {/* <Subscriptionform />
+          <Navigation /> */}
         </div>
       </section>
       

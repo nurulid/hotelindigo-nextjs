@@ -50,7 +50,7 @@ export const HeroVideo = () => {
         Your browser does not support the video tag.
       </video>
 
-      <div className="absolute bottom-20 left-1/2 -translate-x-1/2 text-center z-20 text-white">
+      <div className="absolute bottom-20 left-1/2 -translate-x-1/2 text-center z-20 text-white w-full">
         <p className="uppercase text-[.9rem] sm:text-[1.5rem] lg:text-[1.8rem] xl:text-[2rem] font-light leading-[100%]">
           BOUTIQUE HOTEL STEPS FROM
         </p>{" "}
@@ -59,8 +59,8 @@ export const HeroVideo = () => {
         </p>
       </div>
 
-      <div className="absolute left-14 right-14 bottom-7 flex items-center justify-between z-20 space-y-5">
-        <div className="text-white flex items-center gap-5">
+      <div className="absolute left-5 sm:left-14 right-5 sm:right-14 bottom-5 sm:bottom-7 flex items-center justify-between z-20">
+        <div className="text-white flex items-center gap-x-5">
           <button className="cursor-pointer hover:opacity-70 transition-all duration-300">
             <CameraIcon size={32} />
           </button>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Input } from "../shared/input";
 import { Checkbox } from "../shared/checkbox";
-import { LinkButton } from "../shared/link-button";
+import { Button } from "../shared/button";
 
 export const Subscriptionform = () => {
   return (
@@ -24,7 +24,7 @@ export const Subscriptionform = () => {
         </div>
         <div className="flex-1 space-y-4">
           <Input placeholder="Email Address" type="email" />
-          <LinkButton href="#" size="lg" variant="secondary">Submit</LinkButton>
+          <Button size="lg" variant="secondary" type="button">Submit</Button>
         </div>
       </form>
     </div>

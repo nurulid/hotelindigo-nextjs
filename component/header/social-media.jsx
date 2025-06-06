@@ -7,29 +7,35 @@ import {
   YoutubeIcon,
 } from "lucide-react";
 
-export const SocialMedia = () => {
+export const SocialMedia = ({ isFooter = false }) => {
   return (
     <div className="mt-auto space-y-5">
-      <h3 className="text-[1.2rem] font-light">Follow Us</h3>
+      <h3
+        className={`font-light ${
+          isFooter ? "text-2xl text-white text-center sm:text-left" : "text-[1.2rem]"
+        }`}
+      >
+        Follow Us
+      </h3>
       <ul className="flex items-center gap-6 w-full">
         <li>
           <Link href="#" target="_blank">
-            <FacebookIcon size={18} />
+            <FacebookIcon size={isFooter ? 24 : 18} />
           </Link>
         </li>
         <li>
           <Link href="#" target="_blank">
-            <InstagramIcon size={18} />
+            <InstagramIcon size={isFooter ? 24 : 18} />
           </Link>
         </li>
         <li>
           <Link href="#" target="_blank">
-            <TwitterIcon size={18} />
+            <TwitterIcon size={isFooter ? 24 : 18} />
           </Link>
         </li>
         <li>
           <Link href="#" target="_blank">
-            <YoutubeIcon size={18} />
+            <YoutubeIcon size={isFooter ? 24 : 18} />
           </Link>
         </li>
       </ul>

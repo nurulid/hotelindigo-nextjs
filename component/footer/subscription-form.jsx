@@ -8,7 +8,8 @@ export const Subscriptionform = () => {
   return (
     <div>
       <h2 className="text-white text-center uppercase lg:text-[1.6rem] xl:text-[1.8rem] mb-[30px]">BE THE FIRST TO KNOW</h2>
-      <form action="" className="flex sm:flex-row flex-col justify-between flex-wrap px-[30px] sm:px-0 gap-10 sm:gap-20">
+
+      <form action="" className="flex sm:flex-row flex-col justify-between flex-wrap px-[30px] sm:px-0 gap-2 sm:gap-20">
         <div className="flex-1 space-y-4">
           <Input placeholder="First Name" type="text" />
           <Checkbox

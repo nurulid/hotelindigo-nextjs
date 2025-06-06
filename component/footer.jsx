@@ -11,7 +11,7 @@ export const Footer = ({awards}) => {
         <div className="container space-y-20">
           <Awards awards={awards}/>
           <Subscriptionform />
-          {/* <Navigation /> */}
+          <Navigation />
         </div>
       </section>
       

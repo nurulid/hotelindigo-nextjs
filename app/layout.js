@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "@/assets/styles/globals.css";
-import { LandingLayout } from "@/component/layout/landing-layout";
+import { LandingLayout } from "@/component/layouts/landing-layout";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

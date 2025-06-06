@@ -4,52 +4,26 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { useScroll, motion } from "motion/react";
-import { MobileSheet } from "./header/mobile-sheet";
-import { MobileNavigation } from "./header/mobile-navigation";
-import { useMobileSheet } from "@/context/mobile-sheet-context";
 import { MenuButton } from "./header/menu-button";
+import { NavigationItem } from "./header/navigation-item";
+import { LanguagesMenu } from "./header/languanges-menu";
 
-const SubMenu = ({ menu }) => {
-  return (
-    <ul>
-      {menu.map((item, index) => (
-        <NavigationItem key={index} label={item.label} href={item.href} />
-      ))}
-    </ul>
-  );
-};
-
-const NavigationItem = ({ label, href, isScrolled }) => (
-  <li>
-    <Link
-      href={href}
-      className={[
-        "relative after:content-[''] after:absolute after:block after:left-0 after:-top-[6px] after:h-[2px] after:w-0 after:transition-all after:!duration-300 after:!ease-in-out hover:after:w-[30px]",
-        isScrolled ? "after:bg-secondary" : "after:bg-white",
-      ].join(" ")}
-    >
-      {label}
-    </Link>
-  </li>
-);
+export const HEADER_NAVIGATION = [
+  { label: "About us", href: "#" },
+  { label: "Accomodations", href: "#" },
+  { label: "Facilities", href: "#" },
+  { label: "Dinning", href: "#" },
+  { label: "Event", href: "#" },
+  { label: "Offers", href: "#" },
+  { label: "Press release", href: "#" },
+  { label: "Gallery", href: "#" },
+  { label: "Awards", href: "#" },
+  { label: "Faq & Contact", href: "#" },
+];
 
 export const Header = () => {
   const { scrollY } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
-
-  const HEADER_NAVIGATION = [
-    { label: "About us", href: "/" },
-    { label: "Accomodations", href: "/" },
-    { label: "Facilities", href: "/" },
-    { label: "Dinning", href: "/" },
-    { label: "Event", href: "/" },
-    { label: "Offers", href: "/" },
-    { label: "Press release", href: "/" },
-    { label: "Gallery", href: "/" },
-    { label: "Awards", href: "/" },
-    { label: "Faq & Contact", href: "/" },
-    { label: "En", href: "/" },
-  ];
 
   useEffect(() => {
     return scrollY.on("change", (latest) => {
@@ -66,8 +40,6 @@ export const Header = () => {
           : "bg-transparent h-[155px] items-start px-5 sm:px-[50px]",
       ].join(" ")}
     >
-      <MobileSheet />
-      <MobileNavigation />
       <div className="mobile-logo sm:static translate-x-0">
         <Image
           src="/images/logo.png"
@@ -85,10 +57,12 @@ export const Header = () => {
       </div>
 
       <div
-        className={["flex items-center gap-5 w-full", isScrolled ? "h-full" : ""].join(
-          " "
-        )}
+        className={[
+          "flex items-center gap-5 w-full justify-end",
+          isScrolled ? "h-full" : "",
+        ].join(" ")}
       >
+        {/* MAIN MENU */}
         <ul
           className={[
             "uppercase hidden lg:flex items-center flex-wrap gap-3.5 text-[.8rem] font-semibold",
@@ -96,27 +70,31 @@ export const Header = () => {
           ].join(" ")}
         >
           {HEADER_NAVIGATION.map((item, index) => (
-            <NavigationItem
-              key={index}
-              label={item.label}
-              href={item.href}
-              isScrolled={isScrolled}
-            />
+            <li key={index}>
+              <NavigationItem href={item.href} isScrolled={isScrolled}>
+                {item.label}
+              </NavigationItem>
+            </li>
           ))}
-        </ul>
-
-        <ul
-          className={[
-            "flex lg:hidden items-center gap-3.5 text-[.8rem] font-semibold ml-auto",
-            isScrolled ? "py-0" : "text-white py-[40px]",
-          ].join(" ")}
-        >
-          <NavigationItem label="EN" href="#" />
-          <li className="hidden sm:block">
-            <MenuButton isScrolled={isScrolled}/>
+          <li>
+            <LanguagesMenu isScrolled={isScrolled} />
           </li>
         </ul>
 
+        {/* RESPONSIVE MENU */}
+        <ul
+          className={[
+            "flex lg:hidden items-center gap-5 text-[.8rem] font-semibold ml-auto",
+            isScrolled ? "py-0" : "text-white py-[40px]",
+          ].join(" ")}
+        >
+          <LanguagesMenu isScrolled={isScrolled} />
+          <li className="hidden sm:block">
+            <MenuButton isScrolled={isScrolled} />
+          </li>
+        </ul>
+
+        {/* BOOK NOW BUTTON */}
         {isScrolled ? (
           <Link
             href="/"
@@ -125,7 +103,15 @@ export const Header = () => {
             Book Now
           </Link>
         ) : (
-          <Link href="#" className={["hidden sm:block lg:hidden px-4 py-4", isScrolled ? "border border-primary text-primary" : "border border-white text-white"].join(" ")}>
+          <Link
+            href="#"
+            className={[
+              "hidden sm:block lg:hidden px-4 py-4",
+              isScrolled
+                ? "border border-primary text-primary"
+                : "border border-white text-white",
+            ].join(" ")}
+          >
             Book now
           </Link>
         )}

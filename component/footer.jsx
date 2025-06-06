@@ -8,10 +8,10 @@ export const Footer = ({awards}) => {
   return (
     <footer>
       <section className="container-y-padding bg-primary text-white">
-        <div className="container space-y-10">
+        <div className="container space-y-20">
           <Awards awards={awards}/>
-          {/* <Subscriptionform />
-          <Navigation /> */}
+          <Subscriptionform />
+          {/* <Navigation /> */}
         </div>
       </section>
       

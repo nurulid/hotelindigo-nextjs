@@ -23,37 +23,34 @@ export const LANGUAGES_NAVIGATION = [
 
 export const LanguagesMenu = ({ isScrolled }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const timeoutRef = useRef(null);
-  const dropdownRef = useRef(null);
+  // const timeoutRef = useRef(null);
+  // const dropdownRef = useRef(null);
 
-  const handleOpenMenu = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-      timeoutRef.current = null;
-    }
-    setIsOpen(true);
-  };
+  // const handleOpenMenu = () => {
+  //   if (timeoutRef.current) {
+  //     clearTimeout(timeoutRef.current);
+  //     timeoutRef.current = null;
+  //   }
+  //   setIsOpen(true);
+  // };
 
-  const handleCloseMenu = () => {
-    timeoutRef.current = setTimeout(() => {
-      setIsOpen(false);
-    }, 500);
-  };
+  // const handleCloseMenu = () => {
+  //   timeoutRef.current = setTimeout(() => {
+  //     setIsOpen(false);
+  //   }, 500);
+  // };
 
-  useEffect(() => {
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    };
-  }, []);
+  // useEffect(() => {
+  //   return () => {
+  //     if (timeoutRef.current) {
+  //       clearTimeout(timeoutRef.current);
+  //     }
+  //   };
+  // }, []);
 
   return (
     <div
-      ref={dropdownRef}
       className="relative inline-block"
-      onMouseEnter={handleOpenMenu}
-      onMouseLeave={handleCloseMenu}
     >
       <Dropdown open={isOpen} onOpenChange={setIsOpen}>
         <DropdownTrigger>
@@ -66,10 +63,8 @@ export const LanguagesMenu = ({ isScrolled }) => {
           <DropdownContent
             align="end"
             alignOffset={-20}
-            sideOffset={30}
+            sideOffset={20}
             className="py-6 px-5"
-            onMouseEnter={handleOpenMenu}
-            onMouseLeave={handleCloseMenu}
           >
             {LANGUAGES_NAVIGATION.map((item, index) => (
               <DropdownItem

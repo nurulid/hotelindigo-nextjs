@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { LinkButton } from "../shared/link-button";
+import { LinkButton } from "../shared/base-button";
 
 export const LookInside = () => {
   return (

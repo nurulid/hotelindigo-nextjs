@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { LinkButton } from "../shared/link-button";
+import { LinkButton } from "../shared/base-button";
 
 export const InstagramWidget = () => {
   const [isMounted, setIsMounted] = useState(false);

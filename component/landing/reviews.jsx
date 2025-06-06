@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { LinkButton } from "../shared/link-button";
+import { LinkButton } from "../shared/base-button";
 
 export const Reviews = () => {
   return (

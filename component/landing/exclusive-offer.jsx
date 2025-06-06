@@ -5,7 +5,7 @@ import { useScroll, motion, useTransform } from "motion/react";
 import { Carousel } from "../shared/carousel";
 import Link from "next/link";
 import Image from "next/image";
-import { LinkButton } from "../shared/link-button";
+import { LinkButton } from "../shared/base-button";
 
 export const ExclusiveOffer = ({exclusiveOffers}) => {
   const { scrollYProgress } = useScroll();

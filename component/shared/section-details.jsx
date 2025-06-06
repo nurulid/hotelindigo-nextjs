@@ -1,5 +1,5 @@
 import React from "react";
-import { LinkButton } from "./link-button";
+import { LinkButton } from "./base-button";
 
 export const SectionDetails = ({
   title,

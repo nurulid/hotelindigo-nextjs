@@ -6,7 +6,7 @@ import { useScroll, motion, useTransform } from "motion/react";
 import Link from "next/link";
 import { Carousel } from "../shared/carousel";
 import { SectionDetails } from "../shared/section-details";
-import { LinkButton } from "../shared/link-button";
+import { LinkButton } from "../shared/base-button";
 
 export const Event = ({facilities, events}) => {
   const { scrollYProgress } = useScroll();

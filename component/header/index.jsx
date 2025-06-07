@@ -7,13 +7,45 @@ import { useScroll, motion } from "motion/react";
 import { MenuButton } from "./menu-button";
 import { NavigationItem } from "./navigation-item";
 import { LanguagesMenu } from "./languanges-menu";
+import { Submenu } from "./submenu";
 
 export const HEADER_NAVIGATION = [
   { label: "About us", href: "#" },
-  { label: "Accomodations", href: "#" },
-  { label: "Facilities", href: "#" },
-  { label: "Dinning", href: "#" },
-  { label: "Event", href: "#" },
+  {
+    label: "Accomodations",
+    href: "#",
+    submenu: [
+      { label: "Rooms", href: "#" },
+      { label: "Suites", href: "#" },
+      { label: "One Bedroom Villa", href: "#" },
+      { label: "Two Bedrooms Villa", href: "#" },
+    ],
+  },
+  { label: "Facilities", href: "#",
+    submenu: [
+      { label: "Sava Spa", href: "#" },
+      { label: "24/7 Gym", href: "#" },
+      { label: "Activities", href: "#" },
+    ]
+   },
+  { label: "Dinning", href: "#",
+    submenu: [
+      { label: "Sugarsand", href: "#" },
+      { label: "Pottery Cafe", href: "#" },
+      { label: "Home Delivery", href: "#" },
+      { label: "Cave Pool Lounge", href: "#" },
+      { label: "Makase", href: "#" },
+      { label: "Tree Bar", href: "#" },
+      { label: "KIOSK", href: "#" },
+      { label: "Breakfast Club", href: "#" },
+    ]
+   },
+  { label: "Event", href: "#",
+    submenu: [
+      { label: "Meeting", href: "#" },
+      { label: "Wedding", href: "#" },
+    ]
+   },
   { label: "Offers", href: "#" },
   { label: "Press release", href: "#" },
   { label: "Gallery", href: "#" },
@@ -71,9 +103,17 @@ const Header = () => {
         >
           {HEADER_NAVIGATION.map((item, index) => (
             <li key={index}>
-              <NavigationItem href={item.href} isScrolled={isScrolled}>
-                {item.label}
-              </NavigationItem>
+              {item.submenu ? (
+                <Submenu
+                  menu={item.label}
+                  submenus={item.submenu}
+                  isScrolled={isScrolled}
+                />
+              ) : (
+                <NavigationItem href={item.href} isScrolled={isScrolled}>
+                  {item.label}
+                </NavigationItem>
+              )}
             </li>
           ))}
           <li>

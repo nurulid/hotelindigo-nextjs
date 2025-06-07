@@ -16,9 +16,9 @@ export const ExclusiveOffer = ({exclusiveOffers}) => {
         <div>
           <Carousel
             navigation
-            slides={exclusiveOffers.map((offer, index) => (
+            slides={exclusiveOffers.map((offer) => (
               <div className="flex flex-col md:flex-row md:items-center gap-10">
-                <div key={index} className="lg:w-[60%] aspect-[16/10]">
+                <div key={offer.id} className="lg:w-[60%] aspect-[16/10]">
                   <Image
                     src={offer.image}
                     alt="Event Facility"

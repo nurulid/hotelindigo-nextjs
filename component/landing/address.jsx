@@ -50,8 +50,8 @@ export const Address = ({contact}) => {
                   SHUTTLE SERVICE
                 </p>{" "}
                 <ul className="mt-[20px] mb-[40px]">
-                  {contact.shuttleService.map((service, index) => (
-                    <li key={index}>
+                  {contact.shuttleService.map((service) => (
+                    <li key={service.id}>
                       <Link
                         href={service.link}
                         target="_blank"

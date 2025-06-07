@@ -16,9 +16,9 @@ export const Event = ({facilities, events}) => {
       <div className="container">
         <div className="flex flex-col items-start gap-10 lg:grid lg:grid-cols-3 pb-[3rem] sm:pb-[6rem]">
           <div className="space-y-10 py-8">
-            {events.map((event, index) => (
+            {events.map((event) => (
               <SectionDetails
-                key={index}
+                key={event.id}
                 title={event.title}
                 description={event.description}
                 linkUrl={event.link}
@@ -27,9 +27,9 @@ export const Event = ({facilities, events}) => {
             ))}
           </div>
 
-          {events.map((event, index) => (
+          {events.map((event) => (
             <div
-              key={index}
+              key={event.id}
               className="w-full h-[500px] lg:h-[500px] xl:h-[560px] overflow-hidden relative group"
             >
               <Image
@@ -49,9 +49,9 @@ export const Event = ({facilities, events}) => {
         <div className="px-4 lg:px-[240px]">
           <Carousel
             navigation
-            slides={facilities.map((facility, index) => (
+            slides={facilities.map((facility) => (
               <div
-                key={index}
+                key={facility.id}
                 className="md:aspect-[16/11] lg:aspect-[16/9] overflow-hidden relative"
               >
                 <Image

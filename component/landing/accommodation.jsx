@@ -50,7 +50,7 @@ export const Accommodation = ({ accommodations, dining }) => {
               <Link
                 href={item.link}
                 className="block w-[calc(100%/4)] group"
-                key={index}
+                key={item.id}
                 onMouseEnter={() => setHoveredImage(item.image)}
                 onMouseLeave={() => setHoveredImage(null)}
               >

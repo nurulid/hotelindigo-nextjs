@@ -25,8 +25,8 @@ export const Awards = ({ awards }) => {
             spaceBetween: 100,
           },
         }}
-        slides={awards.map((award, index) => (
-          <Link href={award.link} key={index} className="w-[150px] h-[150px]">
+        slides={awards.map((award) => (
+          <Link href={award.link} key={award.id} className="w-[150px] h-[150px]">
             <Image
               src={award.image}
               alt={`Awards - ${award.title}`}

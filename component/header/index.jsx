@@ -97,7 +97,7 @@ const Header = () => {
         {/* MAIN MENU */}
         <ul
           className={[
-            "uppercase hidden lg:flex items-center flex-wrap gap-3.5 text-[.8rem] font-semibold",
+            "uppercase hidden xl:flex items-center flex-wrap gap-3.5 text-[.8rem] font-semibold",
             isScrolled ? "py-0" : "text-white py-[40px]",
           ].join(" ")}
         >
@@ -124,7 +124,7 @@ const Header = () => {
         {/* RESPONSIVE MENU */}
         <ul
           className={[
-            "flex lg:hidden items-center gap-5 text-[.8rem] font-semibold ml-auto",
+            "flex xl:hidden items-center gap-5 text-[.8rem] font-semibold ml-auto",
             isScrolled ? "py-0" : "text-white py-[40px]",
           ].join(" ")}
         >
@@ -146,7 +146,7 @@ const Header = () => {
           <Link
             href="#"
             className={[
-              "hidden sm:block lg:hidden px-4 py-4",
+              "block xl:hidden px-4 py-4",
               isScrolled
                 ? "border border-primary text-primary"
                 : "border border-white text-white",

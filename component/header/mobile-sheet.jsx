@@ -4,8 +4,9 @@ import { useMobileSheet } from "@/context/mobile-sheet-context";
 import { XIcon } from "lucide-react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
-import { HEADER_NAVIGATION } from "../header";
+
 import { SocialMedia } from "./social-media";
+import { HEADER_NAVIGATION } from ".";
 
 export const MobileSheet = () => {
   const { isOpen, closeSheet } = useMobileSheet();

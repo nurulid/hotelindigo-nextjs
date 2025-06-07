@@ -1,10 +1,10 @@
 import React from "react";
-import { Awards } from "./footer/awards";
-import { Subscriptionform } from "./footer/subscription-form";
-import { Navigation } from "./footer/navigation";
-import { Companies } from "./footer/companies";
+import { Awards } from "./awards";
+import { Subscriptionform } from "./subscription-form";
+import { Navigation } from "./navigation";
+import { Companies } from "./companies";
 
-export const Footer = ({awards}) => {
+const Footer = ({awards}) => {
   return (
     <footer>
       <section className="container-y-padding bg-primary text-white">
@@ -17,7 +17,7 @@ export const Footer = ({awards}) => {
       
       {/* <Companies /> */}
 
-      <div className="bg-[#fafafa] py-[2rem]">
+      <div className="bg-[#fafafa] py-[2rem] pb-24 sm:pb-0">
         <div className="container">
           <p className="text-center text-[.7rem] lg:text-[.8rem] xl:text-[.9rem] font-light">
             © 2025 Hotel Indigo Bali Seminyak Beach. All rights reserved. This
@@ -35,3 +35,5 @@ export const Footer = ({awards}) => {
     </footer>
   );
 };
+
+export default Footer;

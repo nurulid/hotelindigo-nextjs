@@ -1,4 +1,5 @@
-import { Footer } from "@/component/footer";
+
+import Footer from "@/component/footer";
 import { Accommodation } from "@/component/landing/accommodation";
 import { Address } from "@/component/landing/address";
 import { Event } from "@/component/landing/event";
@@ -25,7 +26,7 @@ export default async function Home() {
       <InstagramWidget />
       <Address contact={hotelData.contact}/>
       <Reviews />
-      <Footer awards={hotelData.awards}/> {/* todo */}
+      <Footer awards={hotelData.awards}/>
     </>
   );
 }

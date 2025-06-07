@@ -4,9 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { useScroll, motion } from "motion/react";
-import { MenuButton } from "./header/menu-button";
-import { NavigationItem } from "./header/navigation-item";
-import { LanguagesMenu } from "./header/languanges-menu";
+import { MenuButton } from "./menu-button";
+import { NavigationItem } from "./navigation-item";
+import { LanguagesMenu } from "./languanges-menu";
 
 export const HEADER_NAVIGATION = [
   { label: "About us", href: "#" },
@@ -21,7 +21,7 @@ export const HEADER_NAVIGATION = [
   { label: "Faq & Contact", href: "#" },
 ];
 
-export const Header = () => {
+const Header = () => {
   const { scrollY } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -119,3 +119,5 @@ export const Header = () => {
     </motion.header>
   );
 };
+
+export default Header;

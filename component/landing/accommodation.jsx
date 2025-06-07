@@ -2,13 +2,15 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useScroll, motion, useTransform } from "motion/react";
-import { SectionDetails } from "../shared/section-details";
+import { Dining } from "./dining";
+import { AccommodationMobile } from "./accommodation-mobile";
 
-export const Accommodation = ({accommodations, dining}) => {
+export const Accommodation = ({ accommodations, dining }) => {
   const { scrollYProgress } = useScroll();
   const [hoveredImage, setHoveredImage] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   const cardObjectPositions = [
     "object-[0%]",
@@ -17,12 +19,33 @@ export const Accommodation = ({accommodations, dining}) => {
     "object-[96%]",
   ];
 
+  const widthTransform = useTransform(scrollYProgress, [0, 1], ["15vw", "30vw"]);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+
+    const handleMediaChange = (event) => {
+      setIsMobile(event.matches);
+    };
+
+    setIsMobile(mediaQuery.matches);
+    mediaQuery.addEventListener("change", handleMediaChange);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaChange);
+    };
+  }, []);
+
+  if (isMobile) {
+    return <AccommodationMobile accommodations={accommodations} />;
+  }
+
   return (
     <section className="relative container-y-padding">
       <div className="container">
         <h2 className="text-4xl mb-14 uppercase">Accommodation</h2>
         <div className="relative z-[2]">
-          <div className="flex md:gap-5 lg:gap-10 hover:gap-[5px] transition-all duration-300 group-container">
+          <div className="flex md:gap-5 lg:gap-10 hover:gap-[5px] transition-all duration-300">
             {accommodations.map((item, index) => (
               <Link
                 href={item.link}
@@ -59,29 +82,12 @@ export const Accommodation = ({accommodations, dining}) => {
 
         <div className="h-28" />
 
-        <div className="flex flex-col-reverse sm:grid grid-cols-2 gap-[50px] items-center relative z-[2]">
-          <div className="md:h-[300px] lg:h-[400px] xl:h-[500px] w-full overflow-hidden lg:rounded-bl-[150px]">
-            <Image
-              src={dining.image}
-              alt="Accommodation"
-              width={400}
-              height={400}
-              className="h-full w-full object-cover object-center"
-            />
-          </div>
+        <Dining dining={dining} />
 
-          <SectionDetails
-            title={dining.title}
-            description={dining.description}
-            linkUrl={dining.link}
-            linkTitle="Explore"
-            className="lg:pr-[100px]"
-          />
-        </div>
         <motion.div
           className="absolute left-0 sm:top-[30%] bottom-0 h-[100px] sm:h-[unset] sm:w-[15vw] hidden sm:block bg-primary z-[1] transition-all duration-100"
           style={{
-            width: useTransform(scrollYProgress, [0, 1], ["15vw", "30vw"]),
+            width: widthTransform,
           }}
         />
       </div>

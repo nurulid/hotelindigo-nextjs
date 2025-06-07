@@ -17,7 +17,7 @@ export const LookInside = () => {
         />
       </div>
 
-      <div className="flex flex-col items-center space-y-3 z-[2] absolute top-1/2 left-1/2 -translate-1/2">
+      <div className="flex flex-col items-center space-y-3 z-[2] absolute sm:static top-1/2 left-1/2 -translate-1/2 sm:translate-0">
         <div className="w-full sm:w-[25%] flex flex-col items-center">
           <h2 className="text-2xl lg:text-[1.7rem] xl:text-[2.2rem] px-5 sm:px-[70px] text-center uppercase block text-white sm:text-black">
             Take a Look Inside

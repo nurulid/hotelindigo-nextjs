@@ -15,7 +15,7 @@ export const EventFacilities = ({ facilities }) => {
         slidesPerView={1}
         centeredSlides={true}
         spaceBetween={50}
-        className="sm:!px-[250px]"
+        className="lg:!px-[250px]"
         slides={facilities.map((facility) => (
           <div
             key={facility.id}
@@ -28,7 +28,7 @@ export const EventFacilities = ({ facilities }) => {
               height={400}
               className="w-full md:h-[400px] lg:h-[460px] xl:h-full 2xl:h-full object-cover transition-all !duration-500 object-center"
             />
-            <div className="relative sm:absolute bottom-0 left-0 w-full py-[30px] sm:px-[50px] font-light bg-gradient-to-t from-black/80 via-black/35 to-transparent md:h-[90%] lg:h-[50%] sm:flex flex-col justify-end bg-primary sm:bg-transparent">
+            <div className="relative md:absolute bottom-0 left-0 w-full py-[30px] sm:px-[50px] font-light bg-gradient-to-t from-black/80 via-black/35 to-transparent md:h-[90%] lg:h-[50%] sm:flex flex-col justify-end bg-primary md:bg-transparent">
               <div className="text-white p-4 space-y-6">
                 <div className="space-y-5">
                   <h3 className="text-3xl font-bold text-white">

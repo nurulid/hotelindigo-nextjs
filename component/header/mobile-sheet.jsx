@@ -7,6 +7,8 @@ import { motion, AnimatePresence } from "motion/react";
 
 import { SocialMedia } from "./social-media";
 import { HEADER_NAVIGATION } from ".";
+import { MobileSubmenu } from "./mobile-submenu";
+import React from "react";
 
 export const MobileSheet = () => {
   const { isOpen, closeSheet } = useMobileSheet();
@@ -40,12 +42,19 @@ export const MobileSheet = () => {
                 </li>
                 {HEADER_NAVIGATION.map((menu, index) => (
                   <li key={index}>
-                    <Link
-                      href={menu.href}
-                      className="py-[5px] inline-block hover:text-secondary transition-all"
-                    >
-                      {menu.label}
-                    </Link>
+                    {menu.submenu ? (
+                      <MobileSubmenu
+                        menu={menu.label}
+                        submenus={menu.submenu}
+                      />
+                    ) : (
+                      <Link
+                        href={menu.href}
+                        className="py-[5px] inline-block hover:text-secondary transition-all"
+                      >
+                        {menu.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

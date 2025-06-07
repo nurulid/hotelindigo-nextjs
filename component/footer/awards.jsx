@@ -9,8 +9,7 @@ export const Awards = ({ awards }) => {
       <h2 className="text-white text-center uppercase lg:text-[1.6rem] xl:text-[1.8rem] mb-[30px]">Awards</h2>
       <Carousel
         navigation
-        slidesPerView={6}
-        spaceBetween={100}
+        spaceBetween={80}
         breakpoints={{
           640: {
             slidesPerView: 2,
@@ -25,8 +24,9 @@ export const Awards = ({ awards }) => {
             spaceBetween: 100,
           },
         }}
+        className="!px-20 -mx-5 sm:!-mx-10"
         slides={awards.map((award) => (
-          <Link href={award.link} key={award.id} className="w-[150px] h-[150px]">
+          <Link href={award.link} key={award.id} className="size-[100px] sm:size-[150px]">
             <Image
               src={award.image}
               alt={`Awards - ${award.title}`}

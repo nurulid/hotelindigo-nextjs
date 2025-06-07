@@ -5,7 +5,7 @@ import { LinkButton } from "../shared/base-button";
 
 export const LookInside = () => {
   return (
-    <section className="container mx-auto hidden sm:flex items-center mt-[40px] sm:mt-[8rem]">
+    <section className="container mx-auto block sm:flex items-center my-[40px] sm:mt-[8rem] relative h-[250px] sm:h-auto">
       <div className="w-[50%] sm:w-[25%] h-[40vh] sm:h-[73vh] md:h-[50vh] lg:h-[73vh] overflow-hidden hidden sm:block">
         <Image
           loading="lazy"
@@ -17,9 +17,9 @@ export const LookInside = () => {
         />
       </div>
 
-      <div className="flex flex-col items-center space-y-3">
-        <div className="w-[40%] sm:w-[25%] flex flex-col items-center">
-          <h2 className="md:text-[2.5rem] lg:text-[1.7rem] xl:text-[2.2rem] px-[70px] text-center uppercase hidden sm:block">
+      <div className="flex flex-col items-center space-y-3 z-[2] absolute top-1/2 left-1/2 -translate-1/2">
+        <div className="w-full sm:w-[25%] flex flex-col items-center">
+          <h2 className="text-2xl lg:text-[1.7rem] xl:text-[2.2rem] px-5 sm:px-[70px] text-center uppercase block text-white sm:text-black">
             Take a Look Inside
           </h2>{" "}
         </div>
@@ -29,7 +29,7 @@ export const LookInside = () => {
         </LinkButton>
       </div>
 
-      <div className="w-[50%] md:h-[50vh] lg:h-[73vh] overflow-hidden hidden sm:block">
+      <div className="w-auto h-[250px] md:h-[50vh] lg:h-[73vh] overflow-hidden block absolute sm:static inset-0">
         <Image
           loading="lazy"
           alt=""
@@ -39,6 +39,8 @@ export const LookInside = () => {
           src="https://seminyak.hotelindigo.com/_app/immutable/assets/photo2.CYyw3Co4.png"
         />
       </div>
+
+      <div className="absolute inset-0 bg-black/60 block sm:hidden z-[1]" />
     </section>
   );
 };

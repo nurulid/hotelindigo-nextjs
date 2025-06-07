@@ -3,14 +3,16 @@ import { Carousel } from "../shared/carousel";
 import Image from "next/image";
 import Link from "next/link";
 
-export const AccommodationMobile = ({ accommodations }) => {
+export const AccommodationCarousel = ({ accommodations }) => {
   return (
     <>
       <Carousel
-        navigation
-        slidesPerView={2}
+        navigation={true}
+        slidesPerView={1}
+        centeredSlides={false}
+        slidesPerGroupSkip={1}
         spaceBetween={20}
-        className="!px-4"
+        className="!pr-10"
         slides={accommodations.map((item) => (
           <Link
             href={item.link}
@@ -26,9 +28,9 @@ export const AccommodationMobile = ({ accommodations }) => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <p className="uppercase w-full text-center p-4 bg-white">
+            <h3 className="uppercase w-full text-center p-4 bg-white text-lg !font-medium">
               {item.title}
-            </p>
+            </h3>
           </Link>
         ))}
       />

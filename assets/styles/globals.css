@@ -34,7 +34,7 @@
 
 @layer components {
   .container-y-padding {
-    @apply py-[3rem] sm:py-[6rem];
+    @apply py-6 sm:py-[6rem];
   }
 
   .mobile-logo {

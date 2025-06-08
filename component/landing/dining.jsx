@@ -7,7 +7,7 @@ export const Dining = ({dining}) => {
     <div className="flex flex-col-reverse sm:grid grid-cols-2 gap-[50px] items-center relative z-[2]">
       <div className="md:h-[300px] lg:h-[400px] xl:h-[500px] w-full overflow-hidden lg:rounded-bl-[150px]">
         <Image
-          src={dining.image}
+          src={dining.image ? dining.image : `/images/dining.png`}
           alt="Accommodation"
           width={400}
           height={400}

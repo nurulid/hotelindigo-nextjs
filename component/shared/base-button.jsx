@@ -37,8 +37,10 @@ export const BaseButton = ({
     className
   );
 
+  const linkProps = as === "link" ? { href: href || "#" } : {};
+
   return (
-    <Component className={classes} href={href} {...rest}>
+    <Component className={classes} {...linkProps} {...rest}>
       {children}
     </Component>
   );

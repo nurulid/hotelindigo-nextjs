@@ -146,7 +146,7 @@ const Header = () => {
           <Link
             href="#"
             className={[
-              "block xl:hidden px-4 py-4",
+              "hidden sm:block xl:hidden px-4 py-4",
               isScrolled
                 ? "border border-primary text-primary"
                 : "border border-white text-white",

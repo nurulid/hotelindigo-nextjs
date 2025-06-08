@@ -1,4 +1,3 @@
-
 import Footer from "@/component/footer";
 import { Accommodation } from "@/component/landing/accommodation";
 import { Address } from "@/component/landing/address";
@@ -10,23 +9,47 @@ import { Intro } from "@/component/landing/intro";
 import { LookInside } from "@/component/landing/look-inside";
 import { Reviews } from "@/component/landing/reviews";
 import { hotelData } from "@/lib/data";
+import {
+  getAccommodations,
+  getDining,
+  getFacilities,
+  getEvents,
+  getExclusiveOffers,
+  getContact,
+  getAwards,
+} from "@/services/hotel-service";
 
 export default async function Home() {
+  const [
+    accommodations,
+    dining,
+    events,
+    facilities,
+    exclusiveOffers,
+    contact,
+    awards,
+  ] = await Promise.all([
+    getAccommodations(),
+    getDining(),
+    getEvents(),
+    getFacilities(),
+    getExclusiveOffers(),
+    getContact(),
+    getAwards(),
+  ]);
+
   return (
     <>
       <HeroVideo />
       <Intro />
-      <Accommodation
-        accommodations={hotelData.accommodations}
-        dining={hotelData.dining}
-      />
-      <Event events={hotelData.events} facilities={hotelData.facilities} />
-      <ExclusiveOffer exclusiveOffers={hotelData.exclusiveOffers}/>
+      <Accommodation accommodations={accommodations} dining={dining} />
+      <Event events={events} facilities={facilities} />
+      <ExclusiveOffer exclusiveOffers={exclusiveOffers} />
       <LookInside />
       <InstagramWidget />
-      <Address contact={hotelData.contact}/>
+      <Address contact={contact} />
       <Reviews />
-      <Footer awards={hotelData.awards}/>
+      <Footer awards={awards} />
     </>
   );
 }

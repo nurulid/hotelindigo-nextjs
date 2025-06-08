@@ -17,26 +17,16 @@ import {
   getExclusiveOffers,
   getContact,
   getAwards,
-} from "@/services/hotel-service";
+} from "@/services";
 
 export default async function Home() {
-  const [
-    accommodations,
-    dining,
-    events,
-    facilities,
-    exclusiveOffers,
-    contact,
-    awards,
-  ] = await Promise.all([
-    getAccommodations(),
-    getDining(),
-    getEvents(),
-    getFacilities(),
-    getExclusiveOffers(),
-    getContact(),
-    getAwards(),
-  ]);
+const accommodations = await getAccommodations();
+const dining = await getDining();
+const events = await getEvents();
+const facilities = await getFacilities();
+const exclusiveOffers = await getExclusiveOffers();
+const contact = await getContact();
+const awards = await getAwards();
 
   return (
     <>
